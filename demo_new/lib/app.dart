@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'location_detail.dart';
+import 'screen/location_detail.dart';
 import 'style.dart';
 
 class App extends StatelessWidget {
