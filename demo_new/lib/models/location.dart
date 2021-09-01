@@ -10,26 +10,35 @@ class Location {
 
   static List<Location> fetchAll() {
     return [
-      Location(1,'Hakone Torii Gate', 'assets/images/pic.jpg', [
+      Location(1, 'Hakone Torii Gate', 'assets/images/pic.jpg', [
         LocationFact('Summary',
-        'Stands at the foot of Mount Hakone along the shore of Lake Ashi. It was founded in 757,during the reign of Emperor Kosho.'),
+            'Stands at the foot of Mount Hakone along the shore of Lake Ashi. It was founded in 757,during the reign of Emperor Kosho.'),
         LocationFact('How to Get There',
-        'Hakone Shrine is five minute walk from the Moto-Hakone boat pier, which is a 35 minute bus ride by Hakone Tozan Bus from Hakone-Yumoto Station by bus line H.')
+            'Hakone Shrine is five minute walk from the Moto-Hakone boat pier, which is a 35 minute bus ride by Hakone Tozan Bus from Hakone-Yumoto Station by bus line H.')
       ]),
-
-      Location(2,'Kiyomizu-Dera', 'assets/images/kiyomizu.jpg', [
+      Location(2, 'Kiyomizu-Dera', 'assets/images/kiyomizu.jpg', [
         LocationFact('Summary',
-        'Kiyomizu-dera, formally Otowa-san Kiyomizu-dera, is a Buddhist temple in eastern Kyoto. The temple is part of the Historic Monuments of Ancient Kyoto UNESCO World Heritage site.'),
+            'Kiyomizu-dera, formally Otowa-san Kiyomizu-dera, is a Buddhist temple in eastern Kyoto. The temple is part of the Historic Monuments of Ancient Kyoto UNESCO World Heritage site.'),
         LocationFact('Did you Know?',
-        'The site is famous for its impressive viewing platform, three-storey Koyasu pagoda and the medicinal pure waters of the Otowa Spring.')
+            'The site is famous for its impressive viewing platform, three-storey Koyasu pagoda and the medicinal pure waters of the Otowa Spring.')
       ]),
-
-      Location(3,'Mount Fuji', 'assets/images/Fuji1.jpg', [
+      Location(3, 'Mount Fuji', 'assets/images/Fuji1.jpg', [
         LocationFact('Summary',
-        ' '),
+            'Japan’s Mt. Fuji is an active volcano about 100 kilometers southwest of Tokyo. Commonly called “Fuji-san,” it’s the country’s tallest peak, at 3,776 meters. A pilgrimage site for centuries, it’s considered one of Japan’s 3 sacred mountains. '),
         LocationFact('Did you Know?',
-        'Japan’s Mt. Fuji is an active volcano about 100 kilometers southwest of Tokyo. Commonly called “Fuji-san,” it’s the country’s tallest peak, at 3,776 meters. A pilgrimage site for centuries, it’s considered one of Japan’s 3 sacred mountains.')
+            'When one’s hairline creates an M-shape on the forehead it is referred to as “Fuji’s peak” in Japanese.')
       ]),
     ];
+  }
+
+  static Location? fetchByID(int locationID) {
+    // NOTE: this will replaced by a proper API call
+    List<Location> locations = Location.fetchAll();
+    for (var i = 0; i < locations.length; i++) {
+      if (locations[i].id == locationID) {
+        return locations[i];
+      }
+    }
+    return null;
   }
 }
