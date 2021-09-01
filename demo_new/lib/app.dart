@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'screen/location_detail.dart';
+import 'screen/locations/locations.dart';
 import 'style.dart';
+
 
 class App extends StatelessWidget {
   @override //overriding an existing function that stateless widget provides to us
   Widget build(BuildContext context) {
     return MaterialApp(
-        home: Hello(),
+        home: Locations(),
         theme: ThemeData(
             appBarTheme: AppBarTheme(
               textTheme: TextTheme(headline6: AppBarTextStyle),
